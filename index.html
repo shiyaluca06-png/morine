@@ -8,15 +8,37 @@
     body {
       margin: 0;
       background: #3f3a20;
-      color: #1f1f1f;
-      font-family: Georgia, "Times New Roman", serif;
+      color: #25251f;
+      font-family: "Courier New", Courier, monospace;
     }
 
     .site {
-      max-width: 1180px;
+      width: calc(100% - 96px);
+      max-width: 1720px;
       margin: 0 auto;
       background: #eef3e8;
       min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      z-index: 1;
+      background-image:
+        radial-gradient(rgba(31,31,31,0.18) 0.5px, transparent 0.5px),
+        radial-gradient(rgba(255,255,255,0.5) 0.5px, transparent 0.5px);
+      background-size: 3px 3px, 7px 7px;
+      mix-blend-mode: multiply;
+    }
+
+    .site > * {
+      position: relative;
+      z-index: 2;
     }
 
     .topbar {
@@ -26,7 +48,7 @@
       justify-content: space-between;
       align-items: center;
       font-size: 10px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       border-bottom: 1px solid rgba(31,31,31,0.28);
       background: rgba(238, 243, 232, 0.78);
@@ -61,12 +83,11 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: min(390px, 48vw);
+      width: min(520px, 56vw);
       height: auto;
       transform: translate(-50%, -50%);
       opacity: 0;
       animation: logoFadeIn 5s ease forwards;
-      mix-blend-mode: multiply;
     }
 
     @keyframes logoFadeIn {
@@ -83,16 +104,15 @@
     .intro p {
       margin: 0 auto;
       max-width: 520px;
-      font-size: 12px;
+      font-size: 11px;
       line-height: 1.9;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       color: #55584d;
     }
 
     .product-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
       border-bottom: 1px solid rgba(31,31,31,0.28);
     }
 
@@ -105,6 +125,9 @@
       align-items: center;
       border-right: 1px solid rgba(31,31,31,0.22);
       text-align: center;
+      color: inherit;
+      text-decoration: none;
+      overflow: hidden;
     }
 
     .product:last-child {
@@ -116,12 +139,18 @@
       height: 220px;
       object-fit: contain;
       mix-blend-mode: multiply;
+      transition: transform 0.7s ease, opacity 0.7s ease;
+    }
+
+    .product:hover img {
+      transform: scale(1.06);
+      opacity: 0.88;
     }
 
     .caption {
       font-size: 10px;
       line-height: 1.6;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.03em;
       color: #4e5148;
       text-transform: lowercase;
     }
@@ -156,17 +185,16 @@
 
     .note h2 {
       margin: 0 0 12px;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: normal;
     }
 
     .note p {
       margin: 0;
       max-width: 430px;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.8;
       color: #56594e;
-      font-style: italic;
     }
 
     .small-image {
@@ -220,13 +248,13 @@
       display: flex;
       justify-content: space-between;
       font-size: 10px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
     }
 
     @media (max-width: 760px) {
       .site {
-        max-width: none;
+        width: calc(100% - 24px);
       }
 
       .nav {
@@ -239,7 +267,7 @@
       }
 
       .logo {
-        width: min(300px, 62vw);
+        width: min(360px, 72vw);
       }
 
       .product-row,
@@ -284,7 +312,7 @@
 
     <section class="hero">
       <img class="hero-photo" src="./images/home/hero-01.jpg" alt="Morine hero image">
-      <img class="logo" src="./images/logo/morine_logo_B_1028_1.png" alt="Morine logo">
+      <img class="logo" src="./images/logo/morine_logo_W_1028_1.png" alt="Morine logo">
     </section>
 
     <section class="intro">
@@ -292,22 +320,25 @@
     </section>
 
     <section class="product-row">
-      <div class="product">
+      <a class="product" href="./objects.html">
         <img src="./images/home/object-01.jpg" alt="Objects">
         <div class="caption">objects / selected archive<br>001</div>
-      </div>
-      <div class="product">
+      </a>
+
+      <a class="product" href="./fashion.html">
         <img src="./images/home/fashion-01.jpg" alt="Fashion">
         <div class="caption">fashion / visual note<br>002</div>
-      </div>
-      <div class="product">
+      </a>
+
+      <a class="product" href="./stories.html">
         <img src="./images/home/story-01.jpg" alt="Stories">
         <div class="caption">stories / quiet record<br>003</div>
-      </div>
-      <div class="product">
+      </a>
+
+      <a class="product" href="./spaces.html">
         <img src="./images/home/space-01.jpg" alt="Spaces">
         <div class="caption">spaces / tokyo memory<br>004</div>
-      </div>
+      </a>
     </section>
 
     <section class="split">
