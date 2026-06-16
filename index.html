@@ -170,7 +170,6 @@
       height: 720px;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%) contrast(0.92);
     }
 
     .split-text {
@@ -205,11 +204,11 @@
     }
 
     .small-image img {
-      width: 58%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-    }
+  width: 58%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
 
     .journal-grid {
       display: grid;
@@ -218,8 +217,8 @@
     }
 
     .journal {
-      min-height: 230px;
-      padding: 22px;
+      min-height: 60px;
+      padding: 14px 22px;
       border-right: 1px solid rgba(31,31,31,0.22);
       display: flex;
       flex-direction: column;
@@ -237,7 +236,7 @@
     }
 
     .journal p {
-      margin: 18px 0 0;
+      margin: 8px 0 0;
       font-size: 10px;
       line-height: 1.7;
       color: #55584d;
@@ -320,39 +319,39 @@
     </section>
 
     <section class="product-row">
-      <a class="product" href="./objects.html">
-        <img src="./images/home/object-01.jpg" alt="Objects">
-        <div class="caption">objects / selected archive<br>001</div>
-      </a>
+  <a class="product" href="./stories.html">
+    <img src="./images/home/story-01.jpg" alt="Stories">
+    <div class="caption">stories / quiet record<br>001</div>
+  </a>
 
-      <a class="product" href="./fashion.html">
-        <img src="./images/home/fashion-01.jpg" alt="Fashion">
-        <div class="caption">fashion / visual note<br>002</div>
-      </a>
+  <a class="product" href="./fashion.html">
+    <img src="./images/home/fashion-01.jpg" alt="Fashion">
+    <div class="caption">fashion / visual note<br>002</div>
+  </a>
 
-      <a class="product" href="./stories.html">
-        <img src="./images/home/story-01.jpg" alt="Stories">
-        <div class="caption">stories / quiet record<br>003</div>
-      </a>
+  <a class="product" href="./objects.html">
+    <img src="./images/home/object-01.jpg" alt="Objects">
+    <div class="caption">objects / selected archive<br>003</div>
+  </a>
 
-      <a class="product" href="./spaces.html">
-        <img src="./images/home/space-01.jpg" alt="Spaces">
-        <div class="caption">spaces / tokyo memory<br>004</div>
-      </a>
-    </section>
+  <a class="product" href="./spaces.html">
+    <img src="./images/home/space-01.jpg" alt="Spaces">
+    <div class="caption">spaces / tokyo memory<br>004</div>
+  </a>
+</section>
 
     <section class="split">
       <div class="split-image">
-        <img src="./images/home/feature-01.jpg" alt="Morine feature">
-      </div>
+  <img src="./images/home/feature-02.jpg" alt="Morine feature">
+</div>
       <div class="split-text">
         <div class="note">
-          <h2>Keep Well, Keep Quiet</h2>
+          <h2>Soft spot, gentle yet powerful.</h2>
           <p>Morine gathers fragments of fashion, objects, spaces, and cultural memory from Japan.</p>
         </div>
         <div class="small-image">
-          <img src="./images/home/space-01.jpg" alt="Small archive">
-        </div>
+  <img src="./images/home/feature-03.jpg" alt="Small archive">
+</div>
       </div>
     </section>
 
