@@ -7,63 +7,234 @@
   <style>
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
       background: #f7f3ed;
       color: #1f1f1f;
+      font-family: Georgia, "Times New Roman", serif;
     }
 
-    .page {
-      min-height: 100vh;
+    .site {
+      padding: 28px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #1f1f1f;
+      padding-bottom: 14px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 22px;
+    }
+
+    .hero {
+      min-height: 86vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px;
       text-align: center;
+      padding: 40px 0;
     }
 
-    .hero-image {
-  width: 320px;
-  max-width: 80vw;
-  height: auto;
-  margin-bottom: 32px;
-  opacity: 0;
-  animation: logoFadeIn 5s ease forwards;
-}
-
-@keyframes logoFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-    h1 {
-      font-size: 56px;
-      font-weight: normal;
-      margin: 0 0 20px;
-      letter-spacing: 0.04em;
+    .logo {
+      width: 150px;
+      max-width: 42vw;
+      height: auto;
+      opacity: 0;
+      animation: logoFadeIn 5s ease forwards;
     }
 
-    p {
-      font-size: 10px;
+    .intro {
+      margin-top: 54px;
+      font-size: 11px;
       line-height: 1.8;
-      max-width: 560px;
-      margin: 0 auto;
+      letter-spacing: 0.04em;
+      color: #555;
+    }
+
+    @keyframes logoFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .section {
+      border-top: 1px solid #1f1f1f;
+      padding: 28px 0 70px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 28px;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 72vh;
+      object-fit: cover;
+      display: block;
+    }
+
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .archive-item img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(8%);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .archive-item:hover img {
+      opacity: 0.82;
+      transform: translateY(-4px);
+    }
+
+    .caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid #1f1f1f;
+      margin-top: 10px;
+      padding-top: 8px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 42px;
+      align-items: end;
+    }
+
+    .feature img {
+      width: 100%;
+      height: 620px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .feature-text {
+      border-top: 1px solid #1f1f1f;
+      padding-top: 18px;
+      font-size: 14px;
+      line-height: 1.9;
+      max-width: 420px;
+    }
+
+    .footer {
+      border-top: 1px solid #1f1f1f;
+      padding: 18px 0 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 760px) {
+      .site {
+        padding: 18px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero-photo {
+        height: 56vh;
+      }
+
+      .archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .feature img {
+        height: auto;
+      }
+
+      .footer {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div>
-      <img class="hero-image" src="./images/logo/morine_logo_B_1028_1.png" alt="Morine logo">
-  
-      <p>
-        A quiet visual archive for fashion, objects, spaces, and stories.
-      </p>
-    </div>
-  </div>
+  <main class="site">
+    <header class="top">
+      <div>Morine Japan</div>
+      <nav class="nav">
+        <span>Fashion</span>
+        <span>Objects</span>
+        <span>Spaces</span>
+        <span>Stories</span>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <img class="logo" src="./images/logo/morine_logo_B_1028_1.png" alt="Morine logo">
+        <p class="intro">A quiet visual archive for fashion, objects, spaces, and stories.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <p class="section-title">Selected Image</p>
+      <img class="hero-photo" src="./images/home/hero-01.jpg" alt="Morine archive image">
+    </section>
+
+    <section class="section">
+      <p class="section-title">Archive Index</p>
+      <div class="archive-grid">
+        <div class="archive-item">
+          <img src="./images/home/fashion-01.jpg" alt="Fashion archive">
+          <div class="caption"><span>Fashion</span><span>01</span></div>
+        </div>
+        <div class="archive-item">
+          <img src="./images/home/object-01.jpg" alt="Object archive">
+          <div class="caption"><span>Objects</span><span>02</span></div>
+        </div>
+        <div class="archive-item">
+          <img src="./images/home/space-01.jpg" alt="Space archive">
+          <div class="caption"><span>Spaces</span><span>03</span></div>
+        </div>
+        <div class="archive-item">
+          <img src="./images/home/story-01.jpg" alt="Story archive">
+          <div class="caption"><span>Stories</span><span>04</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature">
+      <img src="./images/home/feature-01.jpg" alt="Morine feature image">
+      <div class="feature-text">
+        Morine collects quiet fragments of fashion, objects, spaces, and cultural memory from Japan.
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>Morine Japan</span>
+      <span>Tokyo / Archive / Contact</span>
+    </footer>
+  </main>
 </body>
 </html>
