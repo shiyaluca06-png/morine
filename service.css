@@ -122,9 +122,10 @@ a { color: inherit; }
 
 .product img {
   width: 62%;
-  height: 220px;
+  aspect-ratio: 1 / 1;
+  height: auto;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
   mix-blend-mode: multiply;
   transition: transform 0.7s ease, opacity 0.7s ease;
 }
@@ -134,20 +135,18 @@ a { color: inherit; }
 .caption { color: #4e5148; font-size: 10px; line-height: 1.6; letter-spacing: 0.03em; }
 
 .jp {
-  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.05em;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif;
+  font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 .split { display: grid; grid-template-columns: 1.05fr 0.95fr; border-bottom: 1px solid rgba(31, 31, 31, 0.28); }
 .split-image { border-right: 1px solid rgba(31, 31, 31, 0.28); text-decoration: none; }
 .split-image img { display: block; width: 100%; height: 720px; object-fit: cover; }
-.split-text { display: grid; grid-template-rows: 1fr 1.2fr; }
-.note { padding: 28px; border-bottom: 1px solid rgba(31, 31, 31, 0.28); }
+.split-text { display: flex; align-items: center; }
+.note { padding: clamp(32px, 6vw, 92px); }
 .note h2 { margin: 0 0 12px; font-size: 18px; font-weight: normal; }
 .note p { max-width: 430px; margin: 0; color: #56594e; font-size: 12px; line-height: 1.8; }
-.small-image { display: flex; align-items: flex-end; justify-content: flex-end; padding: 28px; text-decoration: none; }
-.small-image img { display: block; width: 58%; height: auto; object-fit: contain; }
 .journal-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid rgba(31, 31, 31, 0.28); }
 .journal { min-height: 60px; padding: 14px 22px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid rgba(31, 31, 31, 0.22); }
 .journal:last-child { border-right: 0; }
@@ -180,11 +179,12 @@ a { color: inherit; }
 .oem-layout .service-visual img { width: 100%; max-height: 88vh; }
 .oem-layout .service-copy { padding-top: clamp(52px, 7vw, 118px); }
 
-.contact-page { display: grid; grid-template-columns: 1.08fr 0.92fr; min-height: calc(100vh - 36px); }
-.contact-image { min-height: 640px; border-right: 1px solid rgba(31, 31, 31, 0.28); overflow: hidden; }
-.contact-image img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.72) contrast(0.94); }
-.contact-copy { display: flex; align-items: center; padding: clamp(42px, 7vw, 120px); }
-.contact-copy h1 { max-width: 440px; margin: 0; font-size: clamp(30px, 3.5vw, 56px); font-weight: normal; line-height: 1.25; }
+.contact-page { min-height: calc(100vh - 36px); padding: clamp(48px, 7vw, 120px) clamp(24px, 6vw, 100px); }
+.contact-content { width: min(100%, 860px); margin: 0 auto; }
+.contact-image { overflow: hidden; }
+.contact-image img { display: block; width: 100%; max-height: 78vh; object-fit: contain; }
+.contact-copy { padding: 30px 0 0; }
+.contact-copy h1 { margin: 0; font-size: clamp(22px, 2.4vw, 36px); font-weight: normal; line-height: 1.25; }
 
 @media (max-width: 760px) {
   .site { width: calc(100% - 24px); }
@@ -192,15 +192,14 @@ a { color: inherit; }
   .nav a { font-size: 9px; }
   .hero { height: 54vh; min-height: 360px; }
   .logo { width: min(360px, 72vw); }
-  .product-row, .split, .journal-grid, .service-page, .contact-page { grid-template-columns: 1fr; }
-  .product, .journal, .split-image, .service-visual, .contact-image { border-right: 0; border-bottom: 1px solid rgba(31, 31, 31, 0.22); }
+  .product-row, .split, .journal-grid, .service-page { grid-template-columns: 1fr; }
+  .product, .journal, .split-image, .service-visual { border-right: 0; border-bottom: 1px solid rgba(31, 31, 31, 0.22); }
   .split-image img { height: auto; }
-  .small-image img { width: 100%; }
   .footer { flex-direction: column; gap: 10px; }
   .service-visual { min-height: 0; padding: 48px 34px; }
   .service-visual img { max-height: none; }
   .service-copy { padding: 52px 30px 72px; }
   .market-layout .service-visual, .creative-layout .service-visual, .pr-layout .service-visual, .oem-layout .service-visual { padding: 46px 30px; }
-  .contact-image { min-height: 460px; }
-  .contact-copy { min-height: 320px; padding: 52px 30px 72px; }
+  .contact-page { padding: 46px 30px 72px; }
+  .contact-copy { padding-top: 24px; }
 }
