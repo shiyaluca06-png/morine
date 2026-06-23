@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+
 body {
   margin: 0;
   background: #3f3a20;
@@ -120,10 +122,15 @@ a { color: inherit; }
 
 .product:last-child { border-right: 0; }
 
+.product-image-frame {
+  width: min(62%, 280px);
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
 .product img {
-  width: 62%;
-  aspect-ratio: 1 / 1;
-  height: auto;
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: cover;
   mix-blend-mode: multiply;
@@ -135,9 +142,9 @@ a { color: inherit; }
 .caption { color: #4e5148; font-size: 10px; line-height: 1.6; letter-spacing: 0.03em; }
 
 .jp {
-  font-family: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif;
-  font-weight: 400;
-  letter-spacing: 0.08em;
+  font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.06em;
 }
 
 .split { display: grid; grid-template-columns: 1.05fr 0.95fr; border-bottom: 1px solid rgba(31, 31, 31, 0.28); }
