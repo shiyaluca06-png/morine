@@ -123,8 +123,9 @@ a { color: inherit; }
 .product:last-child { border-right: 0; }
 
 .product-image-frame {
-  width: min(62%, 280px);
+  width: min(82%, 370px);
   aspect-ratio: 3 / 4;
+  margin-inline: auto;
   overflow: hidden;
 }
 
@@ -133,6 +134,7 @@ a { color: inherit; }
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
   mix-blend-mode: multiply;
   transition: transform 0.7s ease, opacity 0.7s ease;
 }
