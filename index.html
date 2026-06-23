@@ -4,308 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morine</title>
-  <style>
-    body {
-      margin: 0;
-      background: #3f3a20;
-      color: #25251f;
-      font-family: "Courier New", Courier, monospace;
-    }
-
-    .site {
-      width: calc(100% - 96px);
-      max-width: 1720px;
-      margin: 0 auto;
-      background: #eef3e8;
-      min-height: 100vh;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .site::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.18;
-      z-index: 1;
-      background-image:
-        radial-gradient(rgba(31,31,31,0.18) 0.5px, transparent 0.5px),
-        radial-gradient(rgba(255,255,255,0.5) 0.5px, transparent 0.5px);
-      background-size: 3px 3px, 7px 7px;
-      mix-blend-mode: multiply;
-    }
-
-    .site > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    .topbar {
-      height: 36px;
-      padding: 0 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 10px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      border-bottom: 1px solid rgba(31,31,31,0.28);
-      background: rgba(238, 243, 232, 0.78);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(8px);
-    }
-
-    .nav {
-      display: flex;
-      gap: 18px;
-    }
-
-    .hero {
-      position: relative;
-      height: 58vh;
-      min-height: 420px;
-      border-bottom: 1px solid rgba(31,31,31,0.28);
-      overflow: hidden;
-    }
-
-    .hero-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(0.78) contrast(0.92);
-    }
-
-    .logo {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: min(520px, 56vw);
-      height: auto;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      animation: logoFadeIn 5s ease forwards;
-    }
-
-    @keyframes logoFadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .intro {
-      padding: 74px 28px 82px;
-      text-align: center;
-      border-bottom: 1px solid rgba(31,31,31,0.28);
-    }
-
-    .intro p {
-      margin: 0 auto;
-      max-width: 520px;
-      font-size: 11px;
-      line-height: 1.9;
-      letter-spacing: 0.03em;
-      color: #55584d;
-    }
-
-    .product-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-bottom: 1px solid rgba(31,31,31,0.28);
-    }
-
-    .product {
-      min-height: 360px;
-      padding: 44px 20px 26px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      border-right: 1px solid rgba(31,31,31,0.22);
-      text-align: center;
-      color: inherit;
-      text-decoration: none;
-      overflow: hidden;
-    }
-
-    .product:last-child {
-      border-right: 0;
-    }
-
-    .product img {
-      width: 62%;
-      height: 220px;
-      object-fit: contain;
-      mix-blend-mode: multiply;
-      transition: transform 0.7s ease, opacity 0.7s ease;
-    }
-
-    .product:hover img {
-      transform: scale(1.06);
-      opacity: 0.88;
-    }
-
-    .caption {
-      font-size: 10px;
-      line-height: 1.6;
-      letter-spacing: 0.03em;
-      color: #4e5148;
-      text-transform: lowercase;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      border-bottom: 1px solid rgba(31,31,31,0.28);
-    }
-
-    .split-image {
-      border-right: 1px solid rgba(31,31,31,0.28);
-    }
-
-    .split-image img {
-      width: 100%;
-      height: 720px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .split-text {
-      display: grid;
-      grid-template-rows: 1fr 1.2fr;
-    }
-
-    .note {
-      padding: 28px;
-      border-bottom: 1px solid rgba(31,31,31,0.28);
-    }
-
-    .note h2 {
-      margin: 0 0 12px;
-      font-size: 18px;
-      font-weight: normal;
-    }
-
-    .note p {
-      margin: 0;
-      max-width: 430px;
-      font-size: 12px;
-      line-height: 1.8;
-      color: #56594e;
-    }
-
-    .small-image {
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-end;
-      padding: 28px;
-    }
-
-    .small-image img {
-  width: 58%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-    .journal-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-bottom: 1px solid rgba(31,31,31,0.28);
-    }
-
-    .journal {
-      min-height: 60px;
-      padding: 14px 22px;
-      border-right: 1px solid rgba(31,31,31,0.22);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .journal:last-child {
-      border-right: 0;
-    }
-
-    .journal h3 {
-      margin: 0;
-      font-size: 12px;
-      font-weight: normal;
-    }
-
-    .journal p {
-      margin: 8px 0 0;
-      font-size: 10px;
-      line-height: 1.7;
-      color: #55584d;
-    }
-
-    .footer {
-      padding: 22px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 10px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 760px) {
-      .site {
-        width: calc(100% - 24px);
-      }
-
-      .nav {
-        display: none;
-      }
-
-      .hero {
-        height: 54vh;
-        min-height: 360px;
-      }
-
-      .logo {
-        width: min(360px, 72vw);
-      }
-
-      .product-row,
-      .split,
-      .journal-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .product,
-      .journal,
-      .split-image {
-        border-right: 0;
-        border-bottom: 1px solid rgba(31,31,31,0.22);
-      }
-
-      .split-image img {
-        height: auto;
-      }
-
-      .small-image img {
-        width: 100%;
-      }
-
-      .footer {
-        flex-direction: column;
-        gap: 10px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./service.css">
 </head>
 <body>
   <main class="site">
     <header class="topbar">
       <div>Morine Japan</div>
-      <nav class="nav">
-        <span>Fashion</span>
-        <span>Objects</span>
-        <span>Spaces</span>
-        <span>Stories</span>
+      <nav class="nav" aria-label="Services">
+        <a href="./market.html">Market</a>
+        <a href="./creative.html">Creative</a>
+        <a href="./pr.html">PR</a>
+        <a href="./oem.html">OEM</a>
       </nav>
     </header>
 
@@ -318,66 +27,44 @@
       <p>A quiet visual archive for fashion, objects, spaces, and stories.</p>
     </section>
 
-    <section class="product-row">
-  <a class="product" href="./stories.html">
-    <img src="./images/home/story-01.jpg" alt="Stories">
-    <div class="caption">stories / quiet record<br>001</div>
-  </a>
-
-  <a class="product" href="./fashion.html">
-    <img src="./images/home/fashion-01.jpg" alt="Fashion">
-    <div class="caption">fashion / visual note<br>002</div>
-  </a>
-
-  <a class="product" href="./objects.html">
-    <img src="./images/home/object-01.jpg" alt="Objects">
-    <div class="caption">objects / selected archive<br>003</div>
-  </a>
-
-  <a class="product" href="./spaces.html">
-    <img src="./images/home/space-01.jpg" alt="Spaces">
-    <div class="caption">spaces / tokyo memory<br>004</div>
-  </a>
-</section>
+    <section class="product-row" aria-label="Morine services">
+      <a class="product" href="./market.html">
+        <img src="./images/spaces/Market-01.png" alt="Market Entry and Brand Direction">
+        <div class="caption">Market Entry &amp; Brand Direction<br>市場参入・ブランド設計<br>001</div>
+      </a>
+      <a class="product" href="./creative.html">
+        <img src="./images/spaces/Creative-01.png" alt="Creative Production and Design">
+        <div class="caption">Creative Production &amp; Design<br>制作・ビジュアルデザイン<br>002</div>
+      </a>
+      <a class="product" href="./pr.html">
+        <img src="./images/spaces/PR-01.png" alt="PR, Marketing and Events">
+        <div class="caption">PR, Marketing &amp; Events<br>PR・マーケティング・イベント<br>003</div>
+      </a>
+      <a class="product" href="./oem.html">
+        <img src="./images/spaces/OEM-01.png" alt="OEM and Import Support">
+        <div class="caption">OEM &amp; Import Support<br>OEM・輸入サポート<br>004</div>
+      </a>
+    </section>
 
     <section class="split">
-      <div class="split-image">
-  <img src="./images/home/feature-02.jpg" alt="Morine feature">
-</div>
+      <div class="split-image"><img src="./images/home/feature-02.jpg" alt="Morine feature"></div>
       <div class="split-text">
         <div class="note">
           <h2>Soft spot, gentle yet powerful.</h2>
           <p>Morine gathers fragments of fashion, objects, spaces, and cultural memory from Japan.</p>
         </div>
-        <div class="small-image">
-  <img src="./images/home/feature-03.jpg" alt="Small archive">
-</div>
+        <div class="small-image"><img src="./images/home/feature-03.jpg" alt="Small archive"></div>
       </div>
     </section>
 
     <section class="journal-grid">
-      <div class="journal">
-        <h3>Should objects be collected or remembered?</h3>
-        <p>A small archive of things that keep their shape after time passes.</p>
-      </div>
-      <div class="journal">
-        <h3>Fashion as a quiet document</h3>
-        <p>Clothing, image, memory, and the soft evidence of taste.</p>
-      </div>
-      <div class="journal">
-        <h3>Tokyo spaces</h3>
-        <p>Rooms, shops, corners, and small surfaces where culture settles.</p>
-      </div>
-      <div class="journal">
-        <h3>Read more</h3>
-        <p>Morine Japan / Archive / Contact</p>
-      </div>
+      <div class="journal"><h3>Should objects be collected or remembered?</h3><p>A small archive of things that keep their shape after time passes.</p></div>
+      <div class="journal"><h3>Fashion as a quiet document</h3><p>Clothing, image, memory, and the soft evidence of taste.</p></div>
+      <div class="journal"><h3>Tokyo spaces</h3><p>Rooms, shops, corners, and small surfaces where culture settles.</p></div>
+      <div class="journal"><h3>Read more</h3><p>Morine Japan / Archive / Contact</p></div>
     </section>
 
-    <footer class="footer">
-      <span>Morine Japan</span>
-      <span>morine-japan.com</span>
-    </footer>
+    <footer class="footer"><span>Morine Japan</span><span>morine-japan.com</span></footer>
   </main>
 </body>
 </html>
