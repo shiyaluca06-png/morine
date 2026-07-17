@@ -166,7 +166,8 @@ a { color: inherit; }
 .note h2 { margin: 0 0 12px; font-size: 18px; font-weight: normal; }
 .note p { max-width: 430px; margin: 0; color: #56594e; font-size: 12px; line-height: 1.8; }
 .journal-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid rgba(31, 31, 31, 0.28); }
-.journal { min-height: 60px; padding: 14px 22px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1px solid rgba(31, 31, 31, 0.22); }
+.journal { min-height: 60px; padding: 14px 22px; display: flex; flex-direction: column; justify-content: space-between;color: inherit;
+text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
 .journal:last-child { border-right: 0; }
 .journal h3 { margin: 0; font-size: 12px; font-weight: normal; }
 .journal p { margin: 8px 0 0; color: #55584d; font-size: 10px; line-height: 1.7; }
