@@ -688,3 +688,62 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
     max-width: 100% !important;
   }
 }
+
+/* ===== Journal row compact final override ===== */
+
+.journal-grid {
+  min-height: auto;
+}
+
+.journal {
+  min-height: 118px;
+  padding: 24px 34px;
+  justify-content: flex-start;
+  gap: 34px;
+  color: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.journal h3 {
+  margin: 0;
+  max-width: 280px;
+  font-size: 15px;
+  line-height: 1.35;
+  letter-spacing: 0.07em;
+  font-weight: normal;
+}
+
+.journal p {
+  margin: 0;
+  max-width: 300px;
+  font-size: 12px;
+  line-height: 1.75;
+  letter-spacing: 0.045em;
+}
+
+.journal-statement h3 {
+  font-size: 16px;
+  line-height: 1.32;
+  letter-spacing: 0.075em;
+}
+
+.journal-statement p {
+  max-width: 310px;
+}
+
+@media (max-width: 760px) {
+  .journal {
+    min-height: 112px;
+    padding: 22px 24px;
+    gap: 24px;
+  }
+
+  .journal h3 {
+    font-size: 14px;
+  }
+
+  .journal p {
+    font-size: 11px;
+  }
+}
