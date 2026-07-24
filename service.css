@@ -441,3 +441,92 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
     font-size: 11px;
   }
 }
+/* ===== About page layout final override ===== */
+
+.site .about-page {
+  min-height: calc(100vh - 36px);
+  padding: clamp(92px, 10vw, 160px) clamp(28px, 8vw, 140px) clamp(120px, 12vw, 180px);
+  box-sizing: border-box;
+}
+
+.site .about-copy {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+  color: #25251f;
+  letter-spacing: 0.03em;
+}
+
+.site .about-copy h1 {
+  margin: 0 0 28px;
+  font-size: clamp(42px, 5.4vw, 78px);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.site .about-subtitle {
+  margin: 0 0 84px;
+  font-size: clamp(17px, 1.7vw, 24px);
+  line-height: 1.8;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+.site .about-gap {
+  height: 72px;
+}
+
+.site .about-copy p {
+  margin: 0 0 28px;
+  max-width: 980px;
+  font-size: clamp(14px, 1.16vw, 18px);
+  line-height: 2.05;
+  font-weight: normal;
+}
+
+.site .about-copy .jp-text {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-weight: 300;
+  letter-spacing: 0.035em;
+  line-height: 2.12;
+}
+
+.site .about-copy .jp-text + .jp-text {
+  margin-top: 30px;
+}
+
+.site .about-copy .about-gap + p {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  .site .about-page {
+    padding: 72px 28px 110px;
+  }
+
+  .site .about-copy {
+    width: 100%;
+  }
+
+  .site .about-copy h1 {
+    font-size: 38px;
+    margin-bottom: 24px;
+  }
+
+  .site .about-subtitle {
+    font-size: 16px;
+    margin-bottom: 56px;
+  }
+
+  .site .about-gap {
+    height: 52px;
+  }
+
+  .site .about-copy p {
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 24px;
+  }
+}
