@@ -552,3 +552,83 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
 .journal:hover {
   opacity: 0.72;
 }
+/* ===== About page typography final override ===== */
+
+.site .about-page {
+  min-height: calc(100vh - 36px);
+  padding: clamp(88px, 10vw, 150px) clamp(28px, 8vw, 140px) clamp(120px, 12vw, 180px);
+  box-sizing: border-box;
+}
+
+.site .about-copy {
+  width: min(100%, 820px);
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+  color: #25251f;
+  letter-spacing: 0.025em;
+}
+
+.site .about-copy h1 {
+  margin: 0 0 26px;
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.08;
+  font-weight: 700;
+}
+
+.site .about-subtitle {
+  margin: 0;
+  font-size: clamp(17px, 1.5vw, 23px);
+  line-height: 1.8;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+}
+
+.site .about-gap {
+  height: 72px;
+}
+
+.site .about-copy p {
+  margin: 0 0 30px;
+  max-width: 820px;
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 2.05;
+  font-weight: normal;
+}
+
+.site .about-copy .jp-text {
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
+  font-weight: 300;
+  letter-spacing: 0.035em;
+  line-height: 2.15;
+}
+
+@media (max-width: 760px) {
+  .site .about-page {
+    padding: 72px 28px 110px;
+  }
+
+  .site .about-copy {
+    width: 100%;
+  }
+
+  .site .about-copy h1 {
+    font-size: 38px;
+    margin-bottom: 24px;
+  }
+
+  .site .about-subtitle {
+    font-size: 16px;
+  }
+
+  .site .about-gap {
+    height: 52px;
+  }
+
+  .site .about-copy p {
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 26px;
+  }
+}
