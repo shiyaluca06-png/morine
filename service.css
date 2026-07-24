@@ -387,3 +387,57 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
   line-height: 1.8;
   color: #55584d;
 }
+/* ===== Mood Park intro final override ===== */
+
+.intro {
+  padding: 111px 28px 123px;
+}
+
+.mood-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  color: inherit;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.04em;
+  transition: opacity 0.4s ease;
+}
+
+.mood-link:hover {
+  opacity: 0.62;
+}
+
+.mood-main,
+.mood-sub {
+  display: block;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mood-main {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.mood-sub {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #55584d;
+}
+
+@media (max-width: 760px) {
+  .intro {
+    padding: 82px 24px 92px;
+  }
+
+  .mood-link {
+    gap: 18px;
+  }
+
+  .mood-main,
+  .mood-sub {
+    font-size: 11px;
+  }
+}
