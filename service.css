@@ -359,3 +359,31 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
     height: 46px;
   }
 }
+/* ===== Mood Park intro link ===== */
+
+.mood-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 0.04em;
+  transition: opacity 0.4s ease;
+}
+
+.mood-link:hover {
+  opacity: 0.62;
+}
+
+.mood-main {
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.mood-sub {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #55584d;
+}
