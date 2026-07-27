@@ -1045,3 +1045,14 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
 .journal-statement p {
   max-width: 260px !important;
 }
+/* ===== Service card caption size +2px ===== */
+
+.product .caption {
+  font-size: 12px !important;
+  line-height: 1.72 !important;
+  letter-spacing: 0.035em !important;
+}
+
+.product .caption * {
+  font-size: inherit !important;
+}
