@@ -1056,3 +1056,36 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
 .product .caption * {
   font-size: inherit !important;
 }
+/* ===== Bottom journal text alignment final ===== */
+
+.journal {
+  height: 118px !important;
+  padding: 26px 44px 22px !important;
+  display: grid !important;
+  grid-template-rows: 18px 24px !important;
+  row-gap: 22px !important;
+  align-content: end !important;
+  align-items: start !important;
+  justify-content: start !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+.journal h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 12.6px !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.078em !important;
+  font-weight: normal !important;
+  white-space: nowrap !important;
+}
+
+.journal p {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 9.8px !important;
+  line-height: 1.45 !important;
+  letter-spacing: 0.045em !important;
+  white-space: nowrap !important;
+}
