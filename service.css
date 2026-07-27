@@ -1017,7 +1017,7 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
 
 .journal {
   height: 118px !important;
-  padding: 20px 44px 24px !important;
+  padding: 20px 44px 18px !important;
   justify-content: flex-end !important;
   align-items: flex-start !important;
   gap: 15px !important;
