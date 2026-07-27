@@ -934,3 +934,29 @@ text-decoration: none; border-right: 1px solid rgba(31, 31, 31, 0.22); }
     line-height: 1.55 !important;
   }
 }
+/* ===== Match About Japanese font with service pages ===== */
+
+.site .about-subtitle,
+.site .about-copy .jp-text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.035em !important;
+  line-height: 2.05 !important;
+  color: #25251f !important;
+}
+
+.site .about-subtitle {
+  font-size: clamp(15px, 1.2vw, 18px) !important;
+}
+
+.site .about-copy .jp-text {
+  font-size: clamp(14px, 1.18vw, 19px) !important;
+}
+
+/* Keep service Japanese in the same font direction */
+.service-copy .jp-text {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Meiryo", sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.035em !important;
+  line-height: 2.05 !important;
+}
